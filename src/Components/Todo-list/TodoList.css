@@ -6,8 +6,11 @@
     justify-content:center;
     align-items:center;
     width: 45vw;
+    max-width:550px;
+    min-width:330px;
     list-style-type: none;
     padding:0;
     overflow:hidden;
     box-shadow: 0 8px 10px hsla(235, 19%, 35%, 0.158);
 }
+

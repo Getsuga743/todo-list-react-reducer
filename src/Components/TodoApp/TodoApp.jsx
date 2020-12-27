@@ -8,6 +8,7 @@ import todoReducer from './TodoReducer';
 import TodoList from '../Todo-list/TodoList';
 import './TodoApp.css';
 import AddTodo from '../AddTodo/AddTodo';
+import img from '../../images/icon-sun.svg';
 
 const init = () => JSON.parse(localStorage.getItem('todos')) || [];
 
@@ -36,6 +37,7 @@ const TodoApp = () => {
     action.payload.done = !action.payload.done;
     dispatch(action);
   };
+  const todosLeft = () => todos.filter((todo) => todo.done !== true).length;
   // const handleAddTodo = (newTodo) => {
   //   const action = {
   //     type: 'update',
@@ -46,7 +48,12 @@ const TodoApp = () => {
 
   return (
     <div className="todo">
-      <h1 className="todo-title">TODO</h1>
+      <div className="todo-title">
+        <h1>TODO</h1>
+        <span>
+          <img alt="light-mode" src={img} />
+        </span>
+      </div>
       <div>
         <div>
           <TodoList
@@ -55,7 +62,7 @@ const TodoApp = () => {
             handleDelete={handleDelete}
           />
         </div>
-        <AddTodo dispatch={dispatch} />
+        <AddTodo dispatch={dispatch} count={todosLeft()} />
       </div>
     </div>
   );

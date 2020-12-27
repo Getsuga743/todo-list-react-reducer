@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import hour from '../../helpers/getHour';
 import useForm from '../../hooks/useForm';
 import './AddTodo.css';
 
-const AddTodo = ({ dispatch }) => {
+const AddTodo = ({ dispatch, count }) => {
   const [{ description }, handleInputChange, reset] = useForm({
     description: '',
   });
@@ -20,11 +21,7 @@ const AddTodo = ({ dispatch }) => {
         done: false,
         date: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`,
         // eslint-disable-next-line new-cap
-        time: `${new Date().getHours()}:${
-          new Date().getMinutes().length === 1
-            ? `0${new Date().getMinutes()}`
-            : new Date().getMinutes()
-        }:${new Date().getSeconds()}`,
+        time: hour(),
       },
     };
     dispatch(action);
@@ -34,6 +31,11 @@ const AddTodo = ({ dispatch }) => {
     e.preventDefault();
     const action = { type: 'clear' };
     dispatch(action);
+  };
+  const handleKeyPress = (e) => {
+    if (e && e.keyCode === 13) {
+      document.querySelector('.todo-form').submit();
+    }
   };
 
   return (
@@ -49,13 +51,21 @@ const AddTodo = ({ dispatch }) => {
             autoComplete="off"
             value={description}
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
           />
           <div className="buttons">
+            <span className="buttons todo-count">
+              {`${count} items left`}
+            </span>
             <button className="btn btn-add" type="submit">
-              add
+              Add
             </button>
-            <button className="btn btn-clear" type="button" onClick={handleClear}>
-              clear
+            <button
+              className="btn btn-clear"
+              type="button"
+              onClick={handleClear}
+            >
+              Clear Completed
             </button>
           </div>
         </label>

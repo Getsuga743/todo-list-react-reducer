@@ -10,4 +10,13 @@
 }
 .todo-title{
     letter-spacing: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.todo-title span img{
+    width: 100%;
+}
+.todo-title span {
+    width:3rem;
 }
