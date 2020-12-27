@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
+import './root.css';
 // eslint-disable-next-line import/no-named-as-default
 import TodoApp from './Components/TodoApp/TodoApp';
 

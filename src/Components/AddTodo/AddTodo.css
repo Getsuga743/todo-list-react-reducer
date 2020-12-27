@@ -1,0 +1,39 @@
+.todo-form {
+  z-index: 2;
+  border: 0.5px solid hsl(233, 11%, 84%);
+}
+.todo-input {
+  color: hsl(235, 19%, 35%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 0.5px solid hsl(233, 11%, 84%);
+  width: 100%;
+  font-size: 1.5rem;
+}
+.buttons {
+  position: relative;
+  color: hsl(235, 19%, 35%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 0;
+  width: 100%;
+  box-shadow: 0 14px 25px hsla(235, 19%, 35%, 0.205);
+  font-size: 1.5rem;
+  border: none;
+}
+.btn {
+  border: none;
+  width: 5rem;
+  height: 100%;
+  margin: 0;
+}

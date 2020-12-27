@@ -1,78 +1,61 @@
-import React, { useReducer } from 'react';
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useReducer, useEffect } from 'react';
 import todoReducer from './TodoReducer';
+import TodoList from '../Todo-list/TodoList';
+import './TodoApp.css';
+import AddTodo from '../AddTodo/AddTodo';
 
-const initialState = [
-  {
-    id: new Date().getTime(),
-    description: 'Aprender React',
-    done: false,
-    date: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`,
-    // eslint-disable-next-line new-cap
-    time: `${new Date().getHours()}:${(new Date().getMinutes().length === 1
-      ? `0${new Date().getMinutes()}`
-      : new Date().getMinutes())}:${new Date().getSeconds()}`,
-  },
-];
+const init = () => JSON.parse(localStorage.getItem('todos')) || [];
+
 const TodoApp = () => {
-  const [todos, dispatch] = useReducer(todoReducer, initialState);
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const [todos, dispatch] = useReducer(todoReducer, [], init);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+    // return () => {
+    //   cleanup
+    // }
+  }, [todos]);
+  const handleDelete = (todoID) => {
     const action = {
-      type: 'add',
-      payload: {
-        id: new Date().getTime(),
-        description: document.querySelector('#todoInput').value,
-        done: false,
-        date: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`,
-        // eslint-disable-next-line new-cap
-        time: `${new Date().getHours()}:${(new Date().getMinutes().length === 1
-          ? `0${new Date().getMinutes()}`
-          : new Date().getMinutes())}:${new Date().getSeconds()}`,
-      },
+      type: 'delete',
     };
-    console.log(action);
+    action.payload = todos.find((todo) => todo.id === todoID);
+    console.log(action.payload);
     dispatch(action);
   };
-  console.log(todos);
+  const handleToggle = (todoId) => {
+    const action = {
+      type: 'update',
+    };
+    action.payload = todos.find((todo) => todo.id === todoId);
+    action.payload.done = !action.payload.done;
+    dispatch(action);
+  };
+  // const handleAddTodo = (newTodo) => {
+  //   const action = {
+  //     type: 'update',
+  //   };
+  //   action.payload = newTodo;
+  //   dispatch(action);
+  // };
+
   return (
-    <div>
-      <h1>
-        TodoApp (
-        {todos.length}
-        {' '}
-        )
-      </h1>
+    <div className="todo">
+      <h1 className="todo-title">TODO</h1>
       <div>
         <div>
-          Todos
-          <ul>
-            {todos.map((todo, index) => (
-              <li key={todo.id}>
-                {index + 1}
-                {' - '}
-                {todo.description}
-                {' - '}
-                {todo.time}
-                <button type="button">x</button>
-              </li>
-            ))}
-          </ul>
+          <TodoList
+            todos={todos}
+            handleToggle={handleToggle}
+            handleDelete={handleDelete}
+          />
         </div>
-        <div>
-          Agregar
-          <form name="todos" onSubmit={handleSubmit}>
-            <label htmlFor="todos">
-              <input
-                id="todoInput"
-                type="text"
-                name="description"
-                placeholder="Insert todo"
-                autoComplete="off"
-              />
-              <button type="submit">add</button>
-            </label>
-          </form>
-        </div>
+        <AddTodo dispatch={dispatch} />
       </div>
     </div>
   );

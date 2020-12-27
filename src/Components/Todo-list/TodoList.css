@@ -1,0 +1,13 @@
+.todo-list{
+    position: relative;
+    border-radius: 5px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width: 45vw;
+    list-style-type: none;
+    padding:0;
+    overflow:hidden;
+    box-shadow: 0 8px 10px hsla(235, 19%, 35%, 0.158);
+}
