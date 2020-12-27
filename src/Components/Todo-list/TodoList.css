@@ -1,16 +1,36 @@
-.todo-list{
-    position: relative;
-    border-radius: 5px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    width: 45vw;
-    max-width:550px;
-    min-width:330px;
-    list-style-type: none;
-    padding:0;
-    overflow:hidden;
-    box-shadow: 0 8px 10px hsla(235, 19%, 35%, 0.158);
+.todo-list {
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45vw;
+  max-width: 550px;
+  min-width: 330px;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 8px 10px hsla(235, 19%, 35%, 0.158);
 }
 
+@media only screen and (max-width: 800px) {
+  .todo-list {
+    width: 360px;
+    max-width: 600px;
+    min-width: 330px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 10px hsla(235, 19%, 35%, 0.158);
+  }
+}
+@media only screen and (max-width: 400px) {
+  .todo-list {
+    width: 90vw;
+    max-width: 600px;
+    min-width: 330px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 10px hsla(235, 19%, 35%, 0.158);
+  }
+}

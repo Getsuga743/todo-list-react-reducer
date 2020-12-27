@@ -1,7 +1,7 @@
 .todo-form {
   z-index: 2;
-  border: 0.5px solid hsl(233, 11%, 84%);
   background-color: #ffffff;
+  box-shadow: 0 14px 50px hsla(235, 19%, 35%, 0.205);
 }
 .todo-input {
   color: hsl(235, 19%, 35%);
@@ -26,7 +26,7 @@
   align-items: center;
   padding: 0;
   width: 100%;
-  box-shadow: 0 14px 25px hsla(235, 19%, 35%, 0.205);
+
   font-size: 1.5rem;
   border: none;
 }

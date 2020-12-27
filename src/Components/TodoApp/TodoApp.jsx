@@ -26,7 +26,6 @@ const TodoApp = () => {
       type: 'delete',
     };
     action.payload = todos.find((todo) => todo.id === todoID);
-    console.log(action.payload);
     dispatch(action);
   };
   const handleToggle = (todoId) => {
@@ -49,7 +48,9 @@ const TodoApp = () => {
   return (
     <div className="todo">
       <div className="todo-title">
-        <h1>TODO</h1>
+        <span>
+          <h1>TODO</h1>
+        </span>
         <span>
           <img alt="light-mode" src={img} />
         </span>

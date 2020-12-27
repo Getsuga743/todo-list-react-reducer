@@ -12,11 +12,41 @@
     letter-spacing: 1rem;
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
 }
 .todo-title span img{
     width: 100%;
 }
 .todo-title span {
     width:3rem;
+}
+
+@media only screen and (max-width: 500px) {
+ .todo{
+     margin-top: 2rem;
+     font-size: 1rem;
+ }
+ .todo-title{
+    letter-spacing: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.todo-title span{
+    margin:auto;
+}
+.todo-title span:first-child{
+    width:100%;
+}
+.todo-title span:first-child h1{
+    display:inline-flex;
+    align-items:flex-end;
+    flex-direction: column;
+    justify-content:flex-end;
+    margin:0;
+}
+.todo-title span:last-child{
+    display: inline-flex;
+    width: 2rem;
+}
 }
