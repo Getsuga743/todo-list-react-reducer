@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <TodoAdd /> debe de coincididir con el snapshot 1`] = `
+<Fragment>
+  <form
+    className="todo-form"
+    name="todos"
+    onSubmit={[Function]}
+  >
+    <label
+      className="todo-label"
+      htmlFor="todos"
+    >
+      <input
+        autoComplete="off"
+        className="todo-input"
+        id="todoInput"
+        name="description"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Insert todo"
+        type="text"
+        value=""
+      />
+      <div
+        className="buttons"
+      >
+        <span
+          className="buttons todo-count"
+        >
+          2 items left
+        </span>
+        <button
+          className="btn btn-add"
+          type="submit"
+        >
+          Add
+        </button>
+        <button
+          className="btn btn-clear"
+          onClick={[Function]}
+          type="button"
+        >
+          Clear Completed
+        </button>
+      </div>
+    </label>
+  </form>
+</Fragment>
+`;

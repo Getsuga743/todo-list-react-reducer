@@ -7,22 +7,19 @@ import React from 'react';
 import TodoListItem from '../TodoListItem/TodoListItem';
 import './TodoList.css';
 
-const TodoList = ({ todos, handleToggle, handleDelete }) => {
-  console.log(todos);
-  return (
-    <div>
-      <ul className="todo-list">
-        {todos.map((todo, index) => (
-          <TodoListItem
-            key={todo.id}
-            todo={todo}
-            index={index}
-            handleToggle={handleToggle}
-            handleDelete={handleDelete}
-          />
-        ))}
-      </ul>
-    </div>
-  );
-};
+const TodoList = ({ todos, handleToggle, handleDelete }) => (
+  <div>
+    <ul className="todo-list">
+      {todos.map((todo, index) => (
+        <TodoListItem
+          key={todo.id}
+          todo={todo}
+          index={index}
+          handleToggle={handleToggle}
+          handleDelete={handleDelete}
+        />
+      ))}
+    </ul>
+  </div>
+);
 export default TodoList;

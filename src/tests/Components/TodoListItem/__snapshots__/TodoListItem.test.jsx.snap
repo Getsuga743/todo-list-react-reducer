@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en <TodoListItem /> debe mostrarse correctamente 1`] = `
+<Fragment>
+  <li
+    className="list-item-container"
+  >
+    <span
+      className="span-container"
+    >
+      <span
+        className=" item-index border-hidden"
+      >
+        <span
+          className=""
+        >
+          <svg
+            height="9"
+            width="11"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 4.304L3.696 7l6-6"
+              fill="none"
+              stroke="#FFF"
+              strokeWidth="2"
+            />
+          </svg>
+        </span>
+      </span>
+    </span>
+    <div
+      className="list-item-content"
+    >
+      <p
+        className=""
+        onClick={[Function]}
+      >
+        Aprender React
+      </p>
+      <div
+        className="list-item-btn"
+      >
+        <span
+          className="time"
+        />
+        <button
+          className="btn btn-item"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="delete item cross"
+            src="icon-cross.svg"
+          />
+        </button>
+      </div>
+    </div>
+  </li>
+</Fragment>
+`;

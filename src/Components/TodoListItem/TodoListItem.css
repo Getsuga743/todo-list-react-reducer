@@ -10,6 +10,7 @@
   width: 100%;
   word-spacing: 0.1rem;
 }
+
 .list-item {
   color: hsl(235, 19%, 35%);
   display: flex;
@@ -53,8 +54,7 @@
 .item-index span svg {
   position: relative;
   left: 0px;
-  height: 100%;
-  width: 100;
+  background-size: cover;
 }
 .span-container {
   display: flex;

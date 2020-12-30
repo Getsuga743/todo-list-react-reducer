@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en TodoApp debe de mostrarse correctamente 1`] = `
+<div
+  className="todo"
+>
+  <div
+    className="todo-title"
+  >
+    <span>
+      <h1>
+        TODO
+      </h1>
+    </span>
+    <span>
+      <img
+        alt="light-mode"
+        src="icon-sun.svg"
+      />
+    </span>
+  </div>
+  <div>
+    <div>
+      <TodoList
+        handleDelete={[Function]}
+        handleToggle={[Function]}
+        todos={Array []}
+      />
+    </div>
+    <AddTodo
+      count={0}
+      dispatch={[Function]}
+    />
+  </div>
+</div>
+`;
