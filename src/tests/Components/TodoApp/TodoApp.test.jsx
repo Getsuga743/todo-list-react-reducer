@@ -15,10 +15,8 @@ describe('pruebas en TodoApp', () => {
   test('debe de agregar un Todo', () => {
     const wrapper = mount(<TodoApp />);
     act(() => {
-      wrapper.find('TodoAdd').prop('handleAddTodo')(demoTodos[0]);
-      wrapper.find('TodoAdd').prop('handleAddTodo')(demoTodos[1]);
+      wrapper.find('AddTodo').prop('dispatch')(demoTodos[0]);
     });
-    expect(localStorage.setItem).toHaveBeenCalledTimes(2);
-    expect(localStorage.setItem).toHaveBeenCalledWith({});
+    expect(localStorage.setItem).toHaveBeenCalledTimes(1);
   });
 });
